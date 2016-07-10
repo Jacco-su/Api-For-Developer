@@ -1,0 +1,6 @@
+<a href="{:url('demo/jikexueyuan/courses','course='.$course_title)}" class="btn btn-link back">返回</a>
+<div class="list-group">
+    {foreach name="videos" item="vid" key="k" }
+    <a href="{:url('demo/jikexueyuan/video','course='.$course_title.'&cid='.$course_id.'&vid='.$vid['vid'])}" class="list-group-item link">{$vid['title']}</a>
+    {/foreach}
+</div>

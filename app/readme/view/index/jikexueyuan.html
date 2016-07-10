@@ -1,0 +1,147 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 nav-menu" id="navbar-content">
+            <ul class="nav nav-pills nav-stacked">
+                <li role="presentation"><a href="#mtype">获取课程分类</a></li>
+                <li role="presentation"><a href="#mcourses">获取课程列表</a></li>
+                <li role="presentation"><a href="#mvideos">获取视频列表</a></li>
+                <li role="presentation"><a href="#minfo">获取视频信息</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 content">
+            <div class="page-header">
+                <h1>极客学院解析工具 <small>说明文档</small></h1>
+            </div>
+            <p class="text-info">本API为第三方API，学习使用，如果侵犯了你的权益，请发邮件至：bill080307@live.cn。我们会及时删除侵权内容，谢谢合作！</p>
+            <h2 id="mtype">获取课程分类 <small>该接口用于获取课程分类</small></h2>
+            <h3><span class="label label-success">GET</span> /api/jikexueyuan/type/</h3>
+            <p>例：<a class="btn btn-link" href="/api/jikexueyuan/type/">/api/jikexueyuan/type/</a></p>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#type_success" aria-controls="type_success" role="tab" data-toggle="tab">成功案例</a></li>
+                    <li role="presentation"><a href="#type_error" aria-controls="type_error" role="tab" data-toggle="tab">失败案例</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="type_success">
+                        <pre><code>{
+    "error": 0,
+    "data": [
+        {
+            "type": "类型标示符",
+            "title": "大类标题",
+            "list": [
+                {
+                    "type": "类型标示符",
+                    "title": "小类标题",
+                    "list": [
+                        {
+                            "type": "类型标示符",
+                            "title": "子类标题"
+                        },
+                    ]
+                },
+            ]
+        },
+    ]
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="type_error">
+                        <pre>{
+    "error": 1,
+    "msg": "错误信息"
+}</pre>
+                    </div>
+                </div>
+
+            </div>
+            <h2 id="mcourses">获取课程列表 <small>该接口用于获取课程列表</small></h2>
+            <h3><span class="label label-success">GET</span> /api/jikexueyuan/courses/[type]/[page]</h3>
+            <p>例：<a class="btn btn-link" href="/api/jikexueyuan/courses/ios/1">/api/jikexueyuan/courses/ios/1</a></p>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#courses_success" aria-controls="courses_success" role="tab" data-toggle="tab">成功案例</a></li>
+                    <li role="presentation"><a href="#courses_error" aria-controls="courses_error" role="tab" data-toggle="tab">失败案例</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="courses_success">
+                        <pre><code>{
+    "error": 0,
+    "data": [
+        {
+            "id": "课程编号",
+            "title": "标题",
+            "img": "封面图片"
+        },
+    ]
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="courses_error">
+                        <pre>{
+    "error": 1,
+    "msg": "错误信息"
+}</pre>
+                    </div>
+                </div>
+
+            </div>
+            <h2 id="mvideos">获取视频列表</h2>
+            <h3><span class="label label-success">GET</span> /api/jikexueyuan/videos/[vid]</h3>
+            <p class="text-info"></p>
+            <p>例：<a class="btn btn-link" href="/api/jikexueyuan/videos/2837">/api/jikexueyuan/videos/2837</a></p>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#videos_success" aria-controls="videos_success" role="tab" data-toggle="tab">成功案例</a></li>
+                    <li role="presentation"><a href="#videos_error" aria-controls="videos_error" role="tab" data-toggle="tab">失败案例</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="videos_success">
+                        <pre><code>{
+    "error": 0,
+    "data": [
+        {
+            "cid": "课程编号",
+            "vid": "视频编号",
+            "title": "标题"
+        },
+    ]
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="videos_error">
+                        <pre>{
+    "error": 1,
+    "msg": "错误信息"
+}</pre>
+                    </div>
+                </div>
+
+            </div>
+            <h2 id="minfo">获取视频信息</h2>
+            <h3><span class="label label-success">GET</span> /api/jikexueyuan/info/[cid]/[vid]</h3>
+            <p>例：<a class="btn btn-link" href="/api/jikexueyuan/info/2837/1">/api/jikexueyuan/info/2837/1</a></p>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#info_success" aria-controls="info_success" role="tab" data-toggle="tab">成功案例</a></li>
+                    <li role="presentation"><a href="#info_error" aria-controls="info_error" role="tab" data-toggle="tab">失败案例</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="info_success">
+                        <pre><code>{
+    "error": 0,
+    "data": {
+        "title": "标题",
+        "url": "视频地址"
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="info_error">
+                        <pre>{
+    "error": 1,
+    "msg": "错误信息"
+}</pre>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

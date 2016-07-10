@@ -1,0 +1,20 @@
+<div class="panel-group" id="videos" role="tablist" aria-multiselectable="true">
+    {foreach name="videos" item="video" key="k" }
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="list-{$k}">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#videos" href="#col-list-{$k}" aria-expanded="true" aria-controls="col-list-{$k}">
+                    {$video['title']}
+                </a>
+            </h4>
+        </div>
+        <div id="col-list-{$k}" class="panel-collapse collapse {eq name='k' value='0'}in{/eq}" role="tabpanel" aria-labelledby="list-{$k}">
+            <div class="list-group">
+                {foreach name="video['list']" item="vid" key="k" }
+                <a href="{:url('demo/codingke/video','course='.$course_title.'&cid='.$course_id.'&vid='.$vid['id'])}" class="list-group-item link">{$vid['title']}</a>
+                {/foreach}
+            </div>
+        </div>
+    </div>
+    {/foreach}
+</div>

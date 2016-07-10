@@ -1,0 +1,20 @@
+<div class="list-group">
+    {foreach name="data['list']" item="item"}
+    <a href="{:url('demo/mp4ba/item','id='.$item['id'])}" class="list-group-item">{$item['title']}</a>
+    {/foreach}
+</div>
+<nav class="text-center" id="paging">
+    <ul class="pagination">
+        {egt name="$page-1" value="1"}
+        <li><a href="{:url('demo/mp4ba/lists','cid='.$cid.'&page='.($page-1))}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        {/egt}
+        {for start="$page-10" end="$page+10" name="i"}
+        {if condition="($i >= 1)and($i <= $data['maxpage'])"}
+        <li><a href="{:url('demo/mp4ba/lists','cid='.$cid.'&page='.$i)}">{$i}</a></li>
+        {/if}
+        {/for}
+        {elt name="$page+1" value="$data['maxpage']"}
+        <li><a href="{:url('demo/mp4ba/lists','cid='.$cid.'&page='.($page+1))}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        {/elt}
+    </ul>
+</nav>

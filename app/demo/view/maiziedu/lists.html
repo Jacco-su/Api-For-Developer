@@ -1,0 +1,5 @@
+<div class="list-group">
+    {foreach name="videos" item="vid" key="k" }
+    <a href="{:url('demo/maiziedu/video','course='.$course_title.'&cid='.$course_id.'&vid='.$vid['id'])}" class="list-group-item link">{$vid['title']}</a>
+    {/foreach}
+</div>

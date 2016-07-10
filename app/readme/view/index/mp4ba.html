@@ -1,0 +1,138 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 nav-menu" id="navbar-content">
+            <ul class="nav nav-pills nav-stacked">
+                <li role="presentation"><a href="#mhome">获取站点信息</a></li>
+                <li role="presentation"><a href="#mcategory">获取分类列表</a></li>
+                <li role="presentation"><a href="#mlists">获取资源列表</a></li>
+                <li role="presentation"><a href="#mitem">获取资源信息</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 content">
+            <div class="page-header">
+                <h1>Mp4ba解析工具 <small>说明文档</small></h1>
+            </div>
+            <p class="text-info">本API为第三方API，学习使用，如果侵犯了你的权益，请发邮件至：bill080307@live.cn。我们会及时删除侵权内容，谢谢合作！</p>
+            <h2 id="mhome">获取站点信息 <small>该接口用于获取站点信息</small></h2>
+            <h3><span class="label label-success">GET</span> /api/mp4ba/home</h3>
+            <p>例：<a class="btn btn-link" href="/api/mp4ba/home">/api/mp4ba/home</a></p>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home_success" aria-controls="home_success" role="tab" data-toggle="tab">成功案例</a></li>
+                    <li role="presentation"><a href="#home_error" aria-controls="home_error" role="tab" data-toggle="tab">失败案例</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home_success">
+                        <pre><code>{
+    "error": 0,
+    "title": "站点标题"
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="home_error">
+                        <pre>{
+    "error": 1,
+    "msg": "错误信息"
+}</pre>
+                    </div>
+                </div>
+
+            </div>
+            <h2 id="mcategory">获取分类列表 <small>该接口用于获取分类列表</small></h2>
+            <h3><span class="label label-success">GET</span> /api/mp4ba/category</h3>
+            <p>例：<a class="btn btn-link" href="/api/mp4ba/category">/api/mp4ba/category</a></p>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#category_success" aria-controls="category_success" role="tab" data-toggle="tab">成功案例</a></li>
+                    <li role="presentation"><a href="#category_error" aria-controls="category_error" role="tab" data-toggle="tab">失败案例</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="category_success">
+                        <pre><code>{
+    "error": 0,
+    "data": [
+        {
+            "id": "类别id",
+            "title": "类别名称"
+        },
+    ]
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="category_error">
+                        <pre>{
+    "error": 1,
+    "msg": "错误信息"
+}</pre>
+                    </div>
+                </div>
+
+            </div>
+            <h2 id="mlists">获取资源列表</h2>
+            <h3><span class="label label-success">GET</span> /api/mp4ba/lists/[cid]/[page]</h3>
+            <p class="text-info"></p>
+            <p>例：<a class="btn btn-link" href="/api/mp4ba/lists/1/1">/api/mp4ba/lists/1/1</a></p>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#lists_success" aria-controls="lists_success" role="tab" data-toggle="tab">成功案例</a></li>
+                    <li role="presentation"><a href="#lists_error" aria-controls="lists_error" role="tab" data-toggle="tab">失败案例</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="lists_success">
+                        <pre><code>{
+    "error": 0,
+    "data": {
+        "maxpage": "最大页码",
+        "list": [
+            {
+                "id": "资源编号",
+                "title": "资源标题"
+            },
+        ]
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="lists_error">
+                        <pre>{
+    "error": 1,
+    "msg": "错误信息"
+}</pre>
+                    </div>
+                </div>
+
+            </div>
+            <h2 id="mitem">获取资源信息</h2>
+            <h3><span class="label label-success">GET</span> /api/mp4/item/[id]</h3>
+            <p>例：<a class="btn btn-link" href="/api/mp4ba/item/a3bf19ddc30842e2e27dfa18d53fc156f4dde0c7">/api/mp4ba/item/a3bf19ddc30842e2e27dfa18d53fc156f4dde0c7</a></p>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#item_success" aria-controls="item_success" role="tab" data-toggle="tab">成功案例</a></li>
+                    <li role="presentation"><a href="#item_error" aria-controls="item_error" role="tab" data-toggle="tab">失败案例</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="item_success">
+                        <pre><code>{
+    "error": 0,
+    "data": {
+        "title": "标题",
+        "cover": "封面",
+        "preview": [
+            "预览图"
+        ],
+        "info": "简介",
+        "resource": [
+            "资源池"
+        ]
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="item_error">
+                        <pre>{
+    "error": 1,
+    "msg": "错误信息"
+}</pre>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

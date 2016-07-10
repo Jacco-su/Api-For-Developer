@@ -1,0 +1,114 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 nav-menu" id="navbar-content">
+            <ul class="nav nav-pills nav-stacked">
+                <li role="presentation"><a href="#mcourses">获取课程列表</a></li>
+                <li role="presentation"><a href="#mvideos">获取视频列表</a></li>
+                <li role="presentation"><a href="#minfo">获取视频信息</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 content">
+            <div class="page-header">
+                <h1>扣丁学堂解析工具 <small>说明文档</small></h1>
+            </div>
+            <p class="text-info">本API为第三方API，学习使用，如果侵犯了你的权益，请发邮件至：bill080307@live.cn。我们会及时删除侵权内容，谢谢合作！</p>
+            <h2 id="mcourses">获取课程列表 <small>该接口用于获取课程列表</small></h2>
+            <h3><span class="label label-success">GET</span> /api/codingke/courses/[course]</h3>
+            <p class="text-info">course 可以取值的范围 { ios , android , swift , cocos2dx }</p>
+            <p>例：<a class="btn btn-link" href="/api/codingke/courses/ios">/api/codingke/courses/ios</a></p>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#courses_success" aria-controls="courses_success" role="tab" data-toggle="tab">成功案例</a></li>
+                    <li role="presentation"><a href="#courses_error" aria-controls="courses_error" role="tab" data-toggle="tab">失败案例</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="courses_success">
+                        <pre><code>{
+    "error": 0,
+    "data": [
+        {
+            "title": "阶段标题",
+            "list": [
+                {
+                    "id": "cid课程编号",
+                    "title": "课程标题"
+                },
+            ]
+        },
+    ]
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="courses_error">
+                        <pre>{
+    "error": 1,
+    "msg": "错误信息"
+}</pre>
+                    </div>
+                </div>
+
+            </div>
+            <h2 id="mvideos">获取视频列表</h2>
+            <h3><span class="label label-success">GET</span> /api/codingke/videos/[vid]</h3>
+            <p class="text-info"></p>
+            <p>例：<a class="btn btn-link" href="/api/codingke/videos/206">/api/codingke/videos/206</a></p>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#videos_success" aria-controls="videos_success" role="tab" data-toggle="tab">成功案例</a></li>
+                    <li role="presentation"><a href="#videos_error" aria-controls="videos_error" role="tab" data-toggle="tab">失败案例</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="videos_success">
+                        <pre><code>{
+    "error": 0,
+    "data": [
+        {
+            "title": "章节标题",
+            "list": [
+                {
+                    "id": "vid视频编号",
+                    "title": "视频标题"
+                },
+            ]
+        },
+    ]
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="videos_error">
+                        <pre>{
+    "error": 1,
+    "msg": "错误信息"
+}</pre>
+                    </div>
+                </div>
+
+            </div>
+            <h2 id="minfo">获取视频信息</h2>
+            <h3><span class="label label-success">GET</span> /api/codingke/info/[cid]/[vid]</h3>
+            <p>例：<a class="btn btn-link" href="/api/codingke/info/206/1430">/api/codingke/info/206/1430</a></p>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#info_success" aria-controls="info_success" role="tab" data-toggle="tab">成功案例</a></li>
+                    <li role="presentation"><a href="#info_error" aria-controls="info_error" role="tab" data-toggle="tab">失败案例</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="info_success">
+                        <pre><code>{
+    "error": 0,
+    "data": {
+        "title": "视频标题",
+        "url": "m3u8地址"
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="info_error">
+                        <pre>{
+    "error": 1,
+    "msg": "错误信息"
+}</pre>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

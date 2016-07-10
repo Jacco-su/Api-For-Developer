@@ -1,0 +1,21 @@
+<div class="panel-group" id="courselist" role="tablist" aria-multiselectable="true">
+    {foreach name="courses" item="course" key="k" }
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="course-{$k}">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#courselist" href="#col-course-{$k}" aria-expanded="true" aria-controls="col-course-{$k}">
+                    {$course['title']}
+                </a>
+            </h4>
+        </div>
+        <div id="col-course-{$k}" class="panel-collapse collapse {eq name='k' value='0'}in{/eq}" role="tabpanel" aria-labelledby="course-{$k}">
+            <div class="list-group">
+                {foreach name="course['list']" item="cid" key="k" }
+                <a href="{:url('demo/maiziedu/lists','course='.$course_title.'&cid='.$cid['id'])}" class="list-group-item link">{$cid['title']}</a>
+                {/foreach}
+            </div>
+        </div>
+    </div>
+    {/foreach}
+</div>
+
